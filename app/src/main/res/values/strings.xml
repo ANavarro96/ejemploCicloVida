@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ejemploCicloVida</string>
+    <string name="title_activity_actividad_principal">ActividadPrincipal</string>
 </resources>

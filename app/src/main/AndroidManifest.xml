@@ -14,8 +14,10 @@
         android:theme="@style/Theme.EjemploCicloVida"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ActividadPrincipal"
+            android:exported="true"
+            android:label="@string/title_activity_actividad_principal"
+            android:theme="@style/Theme.EjemploCicloVida">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,5 +25,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
