@@ -2,6 +2,7 @@ package ifp.pmm.ejemplociclovida
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
@@ -26,6 +27,13 @@ import ifp.pmm.ejemplociclovida.ui.theme.EjemploCicloVidaTheme
 import java.util.concurrent.ThreadLocalRandom
 
 class ActividadPrincipal : ComponentActivity() {
+
+    val ON_CREATE = "ON CREATE"
+    val ON_STOP = "ON STOP"
+    val ON_RESUME = "ON RESUME"
+    val ON_RESTART = "ON RESTART"
+    val ON_DESTROY = "ON DESTROY"
+    val ON_START = "ON START"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -41,8 +49,8 @@ class ActividadPrincipal : ComponentActivity() {
                     Text(numero, modifier = Modifier
                         .wrapContentSize(Alignment.Center),
                     fontSize = 200.sp)
-                    println("-----------------NUEVA INVOCACIÓN--------")
-                    println("Estoy en OnCreate")
+                    Log.d(ON_CREATE, "-----------------NUEVA INVOCACIÓN--------")
+                    Log.d(ON_CREATE, "Estoy en OnCreate")
                 }
             }
         }
@@ -51,28 +59,29 @@ class ActividadPrincipal : ComponentActivity() {
 
     override fun onStart() {
         super.onStart()
-        println("Estoy en OnStart")
+        Log.d(ON_START, "Estoy en OnStart")
     }
 
     override fun onRestart() {
         super.onRestart()
-        println("Estoy en OnRestart")
+        Log.d(ON_RESTART, "Estoy en OnRestart")
     }
 
     override fun onResume() {
         super.onResume()
-        println("Estoy en OnResume")
+        Log.d(ON_RESUME, "Estoy en OnResume")
     }
 
     override fun onStop() {
         super.onStop()
-        println("Estoy en OnStop")
+        Log.d(ON_STOP, "Estoy en OnStop")
     }
 
 
     override fun onDestroy() {
         super.onDestroy()
-        println("Estoy en OnDestroy x_x")
-        println("-----------------FIN INVOCACIÓN--------")
+
+        Log.d(ON_DESTROY,"Estoy en OnDestroy x_x")
+        Log.d(ON_DESTROY,"-----------------FIN INVOCACIÓN--------")
     }
 }
